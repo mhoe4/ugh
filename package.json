@@ -1,27 +1,25 @@
 {
-  "name": "friendfinder",
+  "name": "ugh",
   "version": "1.0.0",
-  "description": "FriendFinder",
+  "description": "ugh",
   "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhoef23/FriendFinder.git"
+    "url": "git+https://github.com/mhoef23/ugh.git"
   },
-  "author": "Mark Hoefer",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mhoef23/FriendFinder/issues"
-  },
-  "homepage": "https://github.com/mhoef23/FriendFinder#readme",
-  "dependencies": {
-    "express": "^4.16.4",
-    "path": "^0.12.7"
+    "url": "https://github.com/mhoef23/ugh/issues"
   },
   "engines": {
     "node": "10.x"
-  }
+  },
+  "homepage": "https://github.com/mhoef23/ugh#readme"
 }
