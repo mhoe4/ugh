@@ -2,6 +2,8 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="google-signin-client_id" content="793815691185-v8ti9pkb5j35mk190f06qnr089dghu3n.apps.googleusercontent.com">
+
   <title>FriendFinder</title>
 
   <!-- Latest compiled and minified CSS & JS -->
@@ -11,7 +13,7 @@
 
   <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+  
 </head>
 
 <body>
@@ -24,12 +26,41 @@
       <h2>Answer a few basic questions. </h2>
       <h2>Then find the friend with the greatest compatibility!</h2>
       <br>
-
-      <div>
+      <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+      <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+      <!-- <div>
         <a href="/survey"><button type="button" class="btn btn-lg btn-primary">
             <h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4>
           </button></a>
-      </div>
+      </div> -->
 
     </div>
 
@@ -43,8 +74,7 @@
   </div>
 
 
-
-
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 
 </html>
